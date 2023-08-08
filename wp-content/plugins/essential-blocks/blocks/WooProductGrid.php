@@ -1,24 +1,125 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "EssentialBlocks\Core\Block" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\WooProductGrid.php on line <i>10</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "EssentialBlocks\Core\Block" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\WooProductGrid.php on line <i>10</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">362336</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\WooProductGrid.php" bgcolor="#eeeeec">...\WooProductGrid.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+namespace EssentialBlocks\blocks;
+
+use WP_Query;
+use EssentialBlocks\Core\Block;
+use EssentialBlocks\API\Product;
+use EssentialBlocks\Utils\Helper;
+
+class WooProductGrid extends Block {
+    protected $frontend_scripts = ['essential-blocks-woo-product-grid-frontend'];
+    protected $frontend_styles  = ['essential-blocks-fontawesome', 'essential-blocks-frontend-style'];
+
+    /**
+     * Unique name of the block.
+     * @return string
+     */
+    public function get_name() {
+        return 'woo-product-grid';
+    }
+
+    /**
+     * Register all other scripts
+     * @return void
+     */
+    public function register_scripts() {
+        $this->assets_manager->register(
+            'woo-product-grid-frontend',
+            $this->path() . '/frontend/index.js'
+        );
+    }
+
+    public function get_array_column( $data, $handle ) {
+        $_no_error = true;
+        if ( ! is_array( $data ) ) {
+            $data      = json_decode( $data, true );
+            $_no_error = json_last_error() === JSON_ERROR_NONE;
+        }
+
+        return $_no_error ? array_column( $data, $handle ) : $data;
+    }
+
+    /**
+     * Render Callback
+     *
+     * @param mixed $attributes
+     * @param mixed $content
+     * @return void|string
+     */
+    public function render_callback( $attributes, $content ) {
+        if ( ! function_exists( '\WC' ) || is_admin() ) {
+            return;
+        }
+
+        $_essential_attributes = [
+            'layout'            => 'grid',
+            'gridPreset'        => 'grid-preset-1',
+            'listPreset'        => 'list-preset-1',
+            'saleBadgeAlign'    => 'align-left',
+            'saleText'          => 'sale',
+            'showRating'        => true,
+            'showPrice'         => true,
+            'showSaleBadge'     => true,
+            'productDescLength' => 5,
+            'isCustomCartBtn'   => false,
+            'simpleCartText'    => 'Buy Now',
+            'variableCartText'  => 'Select Options',
+            'groupedCartText'   => 'View Products',
+            'externalCartText'  => 'Buy Now',
+            'defaultCartText'   => 'Read More'
+        ];
+
+        foreach ( $_essential_attributes as $key => $value ) {
+            if ( isset( $attributes[$key] ) && is_bool( $attributes[$key] ) ) {
+                $_essential_attributes[$key] = $attributes[$key];
+            } elseif ( ! empty( $attributes[$key] ) ) {
+                $_essential_attributes[$key] = $attributes[$key];
+            } else {
+                $_essential_attributes[$key] = $value;
+            }
+        }
+
+        $args = isset( $attributes['queryData'] ) ? $attributes['queryData'] : [];
+
+        $_normalize = [
+            'orderby'  => 'date',
+            'order'    => 'desc',
+            'category' => [],
+            'tag'      => []
+        ];
+
+        foreach ( $_normalize as $key => $value ) {
+            $args[$key] = ! empty( $args[$key] ) ? implode( ',', $this->get_array_column( $args[$key], 'value' ) ) : $value;
+        }
+
+        //Set Orderby to Default if Pro Orderby is selected and Pro isn't active
+        $proOrderby = ['rand'];
+        if ( isset( $args['orderby'] ) && ! ESSENTIAL_BLOCKS_IS_PRO_ACTIVE && in_array( $args['orderby'], $proOrderby ) ) {
+            $args['orderby'] = 'date';
+        }
+
+        $args = wp_parse_args( $args, [
+            'per_page' => 10,
+            'offset'   => 0
+        ] );
+
+        $query = new WP_Query( Product::query_builder( $args ) );
+
+        $blockId   = isset( $attributes["blockId"] ) ? $attributes["blockId"] : "";
+        $classHook = isset( $attributes["classHook"] ) ? $attributes["classHook"] : "";
+
+        ob_start();
+
+        Helper::views( 'product-grid', array_merge( $_essential_attributes, [
+            'blockId'         => $blockId,
+            'classHook'       => $classHook,
+            'query'           => $query,
+            'essentialAttr'   => $_essential_attributes,
+            'loadMoreOptions' => isset( $attributes["loadMoreOptions"] ) ? $attributes["loadMoreOptions"] : [],
+            'queryData'       => $args
+        ] ) );
+
+        return ob_get_clean();
+    }
+}

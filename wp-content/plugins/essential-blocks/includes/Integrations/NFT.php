@@ -1,24 +1,140 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "EssentialBlocks\Integrations\ThirdPartyIntegration" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\NFT.php on line <i>6</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "EssentialBlocks\Integrations\ThirdPartyIntegration" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\NFT.php on line <i>6</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">362320</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\NFT.php" bgcolor="#eeeeec">...\NFT.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+namespace EssentialBlocks\Integrations;
+use EssentialBlocks\Utils\HttpRequest;
+use EssentialBlocks\Utils\Helper;
+
+class NFT extends ThirdPartyIntegration {
+    /**
+     * Base URL for Openverse API
+     * @var string
+     */
+    const URL = 'https://api.opensea.io/api/';
+
+    public function __construct() {
+        $this->add_ajax( [
+            'opensea_nft_collections' => [
+                'callback' => 'collections',
+                'public'   => true
+            ],
+            'opensea_api_key'         => [
+                'callback' => 'get_api',
+                'public'   => true
+            ],
+            'opensea_api_key_save'    => [
+                'callback' => 'save_api',
+                'public'   => false
+            ]
+        ] );
+    }
+
+    /**
+     * API Call to Get NFT Data
+     */
+    public function collections() {
+        if ( ! wp_verify_nonce( $_POST['nft_nonce'], 'eb-nft-nonce' ) ) {
+            die( __( 'Nonce did not match', 'essential-blocks' ) );
+        }
+
+        $limit = 6;
+
+        if ( isset( $_POST['nft_source'] ) && $_POST['nft_source'] === "opensea" ) {
+            $opensea_api = "b61c8a54123d4dcb9acc1b9c26a01cd1";
+            $settings    = get_option( 'eb_settings' );
+
+            if ( isset( $_POST['openseaApiKey'] ) ) {
+                $opensea_api = sanitize_text_field($_POST['openseaApiKey']);
+            } elseif ( is_array( $settings ) && isset( $settings['openseaApi'] ) ) {
+                $opensea_api = sanitize_text_field($settings['openseaApi']);
+            }
+
+            $param = [];
+
+            if ( isset( $_POST['openseaType'] ) ) {
+                //To retrieve Collections
+                if ( $_POST['openseaType'] === "collections" ) {
+                    $url    = $this->url( 'collections' );
+                    $values = [
+                        'asset_owner' => Helper::is_isset( 'openseaCollectionmWalletId' ),
+                        'offset'      => Helper::is_isset( 'offset', 0 ),
+                        'limit'       => Helper::is_isset( 'openseaCollectionLimit', $limit )
+                    ];
+                    $param = array_merge( $param, $values );
+                }
+                //To retrieve Assets
+                elseif ( $_POST['openseaType'] === "items" ) {
+                    $url    = $this->url( 'assets' );
+                    $values = [
+                        'include_orders'  => Helper::is_isset( 'openseaItemIncludeOrder', true ),
+                        'limit'           => Helper::is_isset( 'openseaItemLimit', $limit ),
+                        'order_direction' => Helper::is_isset( 'openseaItemOrderBy', 'desc' )
+                    ];
+                    if ( isset( $_POST['openseaItemFilterBy'] ) ) {
+                        if ( $_POST['openseaItemFilterBy'] === "slug" ) {
+                            $values['collection_slug'] = Helper::is_isset( 'openseaCollectionSlug' );
+                        } else if ( $_POST['openseaItemFilterBy'] === "wallet" ) {
+                            $values['owner'] = Helper::is_isset( 'openseaItemWalletId' );
+                        }
+                    }
+                    $param = array_merge( $param, $values );
+                }
+            }
+            $response = HttpRequest::get_instance()->get( $url, [
+                'body'    => $param,
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                    'X-API-KEY'    => $opensea_api
+                ],
+                'timeout' => 300,
+                'is_ajax' => true
+            ] );
+
+            wp_send_json_success( $response );
+        }
+
+        wp_send_json_error( __( 'Something went wrong.', 'essential-blocks' ) );
+    }
+
+    public function get_api() {
+        if ( ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
+            die( __( 'Nonce did not match', 'essential-blocks' ) );
+        }
+
+        $settings = get_option( 'eb_settings' );
+
+        if ( is_array( $settings ) && isset( $settings['openseaApi'] ) ) {
+            wp_send_json_success( $settings['openseaApi'] );
+        }
+
+        wp_send_json_error( "Couldn't found data" );
+    }
+
+    public function save_api() {
+        if ( ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
+            die( __( 'Nonce did not match', 'essential-blocks' ) );
+        }
+        if (!current_user_can('edit_posts')) {
+            wp_send_json_error( __( 'You are not authorized!', 'essential-blocks' ) );
+        }
+
+        $api = "";
+        if ( isset( $_POST['openseaApi'] ) ) {
+            $api = trim( sanitize_text_field($_POST['openseaApi']) );
+        }
+
+        $settings = is_array( get_option( 'eb_settings' ) ) ? get_option( 'eb_settings' ) : [];
+        if ( strlen( $api ) === 0 ) {
+            unset( $settings['openseaApi'] );
+        } else {
+            $settings['openseaApi'] = $api;
+        }
+
+        if ( is_array( $settings ) > 0 ) {
+            $output = update_option( 'eb_settings', $settings );
+            wp_send_json_success( $output );
+        } else {
+            wp_send_json_error( "Couldn't save data" );
+        }
+
+        exit;
+    }
+}

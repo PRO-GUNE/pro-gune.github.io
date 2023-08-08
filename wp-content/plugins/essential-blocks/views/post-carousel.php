@@ -1,151 +1,50 @@
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $blockId in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php on line <i>3</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361664</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php" bgcolor="#eeeeec">...\post-carousel.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $preset in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php on line <i>4</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361664</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php" bgcolor="#eeeeec">...\post-carousel.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $className in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php on line <i>5</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361664</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php" bgcolor="#eeeeec">...\post-carousel.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $arrows in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php on line <i>6</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361664</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php" bgcolor="#eeeeec">...\post-carousel.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $adaptiveHeight in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php on line <i>7</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361664</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php" bgcolor="#eeeeec">...\post-carousel.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $dotPreset in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php on line <i>8</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361664</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php" bgcolor="#eeeeec">...\post-carousel.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+    $_wrapper_classes = [
+        $blockId,
+        $preset,
+        $className,
+        $arrows == 1 ? 'slick-arrows' : 'arrow-none',
+        $adaptiveHeight == 1 ? 'equal-height' : 'arrow-none',
+        $dotPreset
+    ];
+?>
 
-<div class="eb-parent-wrapper eb-parent-<br />
-<font size='1'><table class='xdebug-error xe-uncaught-exception' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
-<tr><th align='left' bgcolor='#f57900' colspan=">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function esc_attr_e() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php on line <i>12</i>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function esc_attr_e() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php on line <i>12</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361664</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-carousel.php" bgcolor="#eeeeec">...\post-carousel.php<b>:</b>0</td>
-</tr>
+<div class="eb-parent-wrapper eb-parent-<?php esc_attr_e( $blockId );?><?php esc_attr_e( $classHook );?>">
+    <div
+        class="eb-post-carousel-wrapper                                        <?php esc_attr_e( implode( ' ', $_wrapper_classes ) );?>"
+        data-id="<?php esc_attr_e( $blockId );?>"
+        data-querydata="<?php esc_attr_e( serialize( $queryData ) );?>"
+        data-slidersettings="<?php esc_attr_e( json_encode( $sliderSettings ) );?>"
+        data-attributes="<?php esc_attr_e( json_encode( $essentialAttr ) );?>">
 
+        <?php
+            /**
+             * Post Grid Markup
+             */
+
+            if ( ! empty( $posts ) ) {
+                $_defined_vars = get_defined_vars();
+                $_params       = isset( $_defined_vars['data'] ) ? $_defined_vars['data'] : [];
+
+                $_params = array_merge( $_params, [
+                    'posts'      => $posts,
+                    'queryData'  => isset( $queryData ) ? $queryData : [],
+                    'source'     => isset( $queryData['source'] ) ? $queryData['source'] : 'post',
+                    'headerMeta' => ! empty( $headerMeta ) ? json_decode( $headerMeta ) : [],
+                    'footerMeta' => ! empty( $footerMeta ) ? json_decode( $footerMeta ) : []
+                ] );
+
+                $helper::views( 'post-partials/carousel-markup', $_params );
+            }
+
+            /**
+             * No Post Markup
+             */
+            if ( empty( $posts ) ) {
+                $helper::views( 'common/no-content', [
+                    'content' => __( 'No Posts Found', 'essential-blocks' )
+                ] );
+            }
+        ?>
+    </div>
 </div>

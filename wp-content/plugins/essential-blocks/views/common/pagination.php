@@ -1,24 +1,54 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function wp_kses() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\common\pagination.php on line <i>54</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function wp_kses() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\common\pagination.php on line <i>54</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361672</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\common\pagination.php" bgcolor="#eeeeec">...\pagination.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+$html       = '';
+
+if( isset( $totalPosts ) && (int) $totalPosts > (int) $per_page ) {
+    if( isset( $enableMorePosts ) && $enableMorePosts ) {
+
+
+        $html .= sprintf(
+            '<div class="ebpg-pagination %1$s">',
+            $loadMoreType === '3' ? "prev-next-btn" : ""
+        );
+
+        if ($loadMoreType === '1') {
+            $html .= sprintf(
+                '<button class="btn ebpg-pagination-button" data-pagenumber="1">%1$s</button>',
+                $loadMoreButtonTxt
+            );
+        }
+
+        $prevTxt = isset($prevTxt) ? $prevTxt : "<";
+        $nextTxt = isset($nextTxt) ? $nextTxt : ">";
+
+        if ( isset( $totalPosts ) && ( $loadMoreType === '2' || $loadMoreType === '3' ) ) {
+            $totalPages = ceil( (int) $totalPosts / (int) $per_page);
+            $html .= sprintf(
+                '<button class="ebpg-pagination-item-previous">
+                    %1$s
+                </button>',
+                esc_html__($prevTxt)
+            );
+            for ($i = 1; $i <= $totalPages; $i++) {
+                $active = $i == 1 ? "active" : "";
+
+                $html .= sprintf(
+                    '<button class="ebpg-pagination-item %2$s" data-pagenumber="%1$s">
+                        %1$s
+                    </button>',
+                    $i, $active
+                );
+            }
+            $html .= sprintf(
+                '<button class="ebpg-pagination-item-next">
+                    %1$s
+                </button>',
+                esc_html__($nextTxt)
+            );
+        }
+
+        $html .= '</div>';
+    }
+}
+
+echo wp_kses($html, 'post');

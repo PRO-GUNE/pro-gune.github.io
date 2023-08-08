@@ -1,24 +1,27 @@
-<div></div>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function esc_attr_e() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\social-share.php on line <i>3</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function esc_attr_e() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\social-share.php on line <i>3</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361648</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\social-share.php" bgcolor="#eeeeec">...\social-share.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php global $post;?>
+    <div
+        <?php esc_attr_e( $wrapper_attributes );?>>
+            <div class="eb-parent-wrapper eb-parent-<?php echo esc_attr( $blockId ); ?><?php echo esc_attr( $classHook ); ?>">
+                <div class="<?php echo esc_attr( $blockId ); ?> eb-social-share-wrapper<?php echo $isFloating ? esc_attr( ' eb-social-share-floating' ) : ''; ?><?php echo $isFloating && 'circular' == $iconShape ? esc_attr( ' eb-social-share-circular' ) : "" ?>">
+                    <ul class="eb-social-shares">
+                        <?php
+                            foreach ( $profilesOnly as $profile ) {
+                                preg_match( '/fa-([\w\-]+)/', $profile['icon'], $matches );
+                                $iconClass = is_array( $matches ) && ! empty( $matches[1] ) ? $matches[1] . '-original' : '';
+                            ?>
+                            <li>
+                                <a class="<?php echo esc_attr( $iconClass ); ?><?php echo " " . esc_attr( $iconEffect ); ?>" href=<?php echo $block_object::eb_social_share_name_link( $post->ID, $profile['icon'] ); ?> target="_blank" rel="nofollow noopener noreferrer">
+                                    <i class="<?php echo esc_attr( $profile['icon'] ); ?> hvr-icon eb-social-share-icon"></i>
+                                    <?php
+                                    if ( ! empty( $showTitle && ! empty( $profile['iconText'] ) ) ) {?>
+                                        <span class="eb-social-share-text"><?php echo esc_html( $profile['iconText'] ); ?></span>
+                                    <?php }?>
+                                </a>
+                            </li>
+                        <?php }?>
+                    </ul>
+                </div>
+            </div>
+    </div>
+
+

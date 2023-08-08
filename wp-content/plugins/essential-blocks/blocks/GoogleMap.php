@@ -1,24 +1,75 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "EssentialBlocks\Core\Block" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\GoogleMap.php on line <i>21</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "EssentialBlocks\Core\Block" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\GoogleMap.php on line <i>21</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">362288</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\GoogleMap.php" bgcolor="#eeeeec">...\GoogleMap.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+/**
+ * Functions to register client-side assets (scripts and stylesheets) for the
+ * Gutenberg block.
+ *
+ * @package essential-blocks
+ */
+
+/**
+ * Registers all block assets so that they can be enqueued through Gutenberg in
+ * the corresponding context.
+ *
+ * @see https://wordpress.org/gutenberg/handbook/designers-developers/developers/tutorials/block-tutorial/applying-styles-with-stylesheets/
+ */
+
+namespace EssentialBlocks\blocks;
+
+use EssentialBlocks\Core\Block;
+
+class GoogleMap extends Block {
+    protected $frontend_scripts = ['essential-blocks-google-map-frontend', 'essential-blocks-google-map-script'];
+    protected $editor_scripts   = 'essential-blocks-google-map-script-editor';
+
+
+    protected $frontend_styles = ['essential-blocks-frontend-style'];
+
+    /**
+     * Unique name of the block.
+     * @return string
+     */
+    public function get_name() {
+        return 'google-map';
+    }
+
+    /**
+     * Register all other scripts
+     * @return void
+     */
+    public function register_scripts() {
+        $this->assets_manager->register(
+            'google-map-frontend',
+            $this->path() . '/frontend/index.js'
+        );
+        $map_api  = "AIzaSyB-sVrt6W1jsEkrxSRYWh_ABpkIZLVpLIs";
+        $settings = get_option( 'eb_settings', [] );
+
+        if ( isset( $_POST['googleMapApi'] ) ) {
+            $map_api = $_POST['googleMapApi'];
+        } elseif ( is_array( $settings ) && ! empty( $settings['googleMapApi'] ) ) {
+            $map_api = $settings['googleMapApi'];
+        }
+
+        if ( $map_api ) {
+            //Only for editor
+            $this->assets_manager->register(
+                'google-map-script-editor',
+                'https://maps.googleapis.com/maps/api/js?key=' . $map_api . '&callback=Function.prototype&libraries=places&cache=' . rand( 10, 1000 ),
+                ['essential-blocks-editor-script'],
+                [
+                    'is_js' => true
+                ]
+            );
+            //For frontend
+            $this->assets_manager->register(
+                'google-map-script',
+                'https://maps.googleapis.com/maps/api/js?key=' . $map_api . '&callback=Function.prototype&libraries=places&cache=' . rand( 10, 1000 ),
+                [],
+                [
+                    'is_js' => true
+                ]
+            );
+        }
+    }
+}

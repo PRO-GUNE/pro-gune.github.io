@@ -395,7 +395,7 @@
 
 .eb-openverse-form-wrapper.loading-circle::before {
   content: "";
-  background-image: url("httppro-gune.github.io/wp-content/plugins/essential-blocks/blocks/openverse/src/template-components/icons/loading.gif");
+  background-image: url("./template-components/icons/loading.gif");
   background-size: 40px 40px;
   position: absolute;
   top: 0;

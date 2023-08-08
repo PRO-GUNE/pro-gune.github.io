@@ -1,24 +1,75 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "EssentialBlocks\Integrations\ThirdPartyIntegration" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\GoogleMap.php on line <i>7</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "EssentialBlocks\Integrations\ThirdPartyIntegration" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\GoogleMap.php on line <i>7</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">362128</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\GoogleMap.php" bgcolor="#eeeeec">...\GoogleMap.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+namespace EssentialBlocks\Integrations;
+
+use EssentialBlocks\Utils\HttpRequest;
+
+class GoogleMap extends ThirdPartyIntegration
+{
+    public function __construct()
+    {
+        $this->add_ajax([
+            'google_map_api_key' => [
+                'callback' => 'google_map_api_key_callback',
+                'public'   => true
+            ],
+            'google_map_api_key_save' => [
+                'callback' => 'google_map_api_key_save_callback',
+                'public'   => false
+            ],
+        ]);
+    }
+
+    /**
+     * Get Google Map API
+     */
+    public function google_map_api_key_callback()
+    {
+        if (!wp_verify_nonce($_POST['admin_nonce'], 'admin-nonce')) {
+            die(__('Nonce did not match', 'essential-blocks'));
+        }
+
+        $settings = get_option('eb_settings');
+
+        if (is_array($settings) && isset($settings['googleMapApi'])) {
+            wp_send_json_success($settings['googleMapApi']);
+        } else {
+            wp_send_json_error("Couldn't found data");
+        }
+        exit;
+    }
+
+    /**
+     * Google Map API key save callback
+     */
+    public function google_map_api_key_save_callback()
+    {
+        if (!wp_verify_nonce($_POST['admin_nonce'], 'admin-nonce')) {
+            die(__('Nonce did not match', 'essential-blocks'));
+        }
+        if (!current_user_can('edit_posts')) {
+            wp_send_json_error( __( 'You are not authorized!', 'essential-blocks' ) );
+        }
+
+        $api = "";
+        if (isset($_POST['googleMapApi'])) {
+            $api = trim(sanitize_text_field($_POST['googleMapApi']));
+        }
+
+        $settings = is_array(get_option('eb_settings')) ? get_option('eb_settings') : [];
+        if (strlen($api) === 0) {
+            unset($settings['googleMapApi']);
+        } else {
+            $settings['googleMapApi'] = $api;
+        }
+
+        if (is_array($settings) > 0) {
+            $output = update_option('eb_settings', $settings);
+            wp_send_json_success($output);
+        } else {
+            wp_send_json_error("Couldn't save data");
+        }
+
+        exit;
+    }
+}

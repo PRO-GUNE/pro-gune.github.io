@@ -1,24 +1,59 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "EssentialBlocks\Dependencies\WPNotice\Utils\Base" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Dependencies\WPNotice\Utils\Storage.php on line <i>7</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "EssentialBlocks\Dependencies\WPNotice\Utils\Base" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Dependencies\WPNotice\Utils\Storage.php on line <i>7</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">362656</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Dependencies\WPNotice\Utils\Storage.php" bgcolor="#eeeeec">...\Storage.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+namespace EssentialBlocks\Dependencies\WPNotice\Utils;
+
+use function property_exists;
+
+class Storage extends Base {
+	private $app         = 'wpnotice';
+	private $type        = 'options';
+	private $version     = '1.0.0';
+	private $storage_key = 'wpnotice_options';
+
+	public function __construct( $args ){
+		$this->app         = ! empty( $args['id'] ) ? $args['id'] : $this->app;
+		$this->type        = ! empty( $args['store'] ) ? $args['store'] : $this->type;
+		$this->version     = ! empty( $args['version'] ) ? $args['version'] : $this->version;
+		$this->storage_key = ! empty( $args['storage_key'] ) ? $this->app . '_' . $args['storage_key'] : $this->storage_key;
+	}
+
+	public function __get( $name ){
+		return property_exists( $this, $name ) ? $this->$name : null;
+	}
+
+	public function save( $value, $key = '' ){
+		if( empty( $key ) ) {
+			$key = $this->storage_key;
+			$value['version'] = $this->version;
+		}
+
+		if( $this->type === 'options' ) {
+			return update_site_option( $key, $value );
+		}
+
+		return false;
+	}
+
+	public function get( $key = '', $default = false ){
+		$key = empty( $key ) ? $this->storage_key : $key;
+
+		if( $this->type === 'options' ) {
+			return get_site_option( $key, $default );
+		}
+
+		return $default;
+	}
+
+	public function save_meta( $id, $value = true ){
+		return update_user_meta( get_current_user_id(), "{$this->app}_{$id}_notice_dismissed", $value );
+	}
+
+	public function get_meta( $id ){
+		return boolval( get_user_meta( get_current_user_id(), "{$this->app}_{$id}_notice_dismissed", true ) );
+	}
+
+	public function remove_meta( $id ){
+		return delete_user_meta( get_current_user_id(), "{$this->app}_{$id}_notice_dismissed" );
+	}
+
+}

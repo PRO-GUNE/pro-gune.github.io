@@ -1,433 +1,99 @@
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $helper in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>8</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $product in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>8</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $showRating in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>8</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $helper in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>15</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $helper in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>18</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $product in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>18</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $showPrice in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>18</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $helper in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>28</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $helper in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>31</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $product in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>31</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $showPrice in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>31</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $helper in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>38</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $product in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>38</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $showRating in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>38</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $helper in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>45</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $productDescLength in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>45</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $helper in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>50</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+    /**
+     * @var int $productDescLength
+     * @var bool $showRating
+     * @var bool $showPrice
+     */
+    $_grid_sequence = [
+        'rating' => function () use ( $helper, $product, $showRating ) {
+            if ( $showRating ) {
+                $helper::views( 'woocommerce/rating', [
+                    'product' => $product
+                ] );
+            }
+        },
+        'title'  => function () use ( $helper ) {
+            $helper::views( 'woocommerce/title' );
+        },
+        'price'  => function () use ( $helper, $product, $showPrice ) {
+            if ( $showPrice ) {
+                $helper::views( 'woocommerce/price', [
+                    'product' => $product
+                ] );
+            }
+        }
+    ];
+
+    $_list_sequence = [
+        'title'       => function () use ( $helper ) {
+            $helper::views( 'woocommerce/title' );
+        },
+        'price'       => function () use ( $helper, $product, $showPrice ) {
+            if ( $showPrice ) {
+                $helper::views( 'woocommerce/price', [
+                    'product' => $product
+                ] );
+            }
+        },
+        'rating'      => function () use ( $helper, $product, $showRating ) {
+            if ( $showRating ) {
+                $helper::views( 'woocommerce/rating', [
+                    'product' => $product
+                ] );
+            }
+        },
+        'details'     => function () use ( $helper, $productDescLength ) {
+            $helper::views( 'woocommerce/details', [
+                'productDescLength' => $productDescLength
+            ] );
+        },
+        'button-list' => function () use ( $helper ) {
+            $helper::views( 'woocommerce/button-list' );
+        }
+    ];
+
+?>
 
 <div class="eb-woo-products-col">
     <div class="eb-woo-product">
-        <br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $layout in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>59</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
+        <?php if ( "grid" === $layout && 'grid-preset-3' === $gridPreset ): ?>
+            <a class="grid-preset-anchor" href="<?php esc_attr_e( esc_url( get_permalink() ) );?>"></a>
+        <?php endif;?>
 
         <div class="eb-woo-product-image-wrapper">
             <div class="eb-woo-product-image">
-                <br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $layout in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>65</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function wp_kses_post() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>70</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function wp_kses_post() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php on line <i>70</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361920</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\woocommerce\single-product.php" bgcolor="#eeeeec">...\single-product.php<b>:</b>0</td>
-</tr>
-</table></font>
-</div>
-</div>
-</div>
+                <?php if ( "list" === $layout ): ?>
+                    <a href="<?php esc_attr_e( esc_url( get_permalink() ) );?>">
+                <?php
+                    endif;
+
+                    echo wp_kses_post( $product->get_image( 'woocommerce_thumbnail' ) );
+
+                    if ( $showSaleBadge && $product->is_on_sale() ) {
+                        echo wp_kses_post( '<span class="eb-woo-product-ribbon ' . $saleBadgeAlign . '">' . $saleText . '</span>' );
+                    }
+
+                    if ( "list" === $layout ) {
+                        echo wp_kses_post( '</a>' );
+                    }
+                ?>
+            </div>
+
+            <?php if ( 'grid' === $layout ): ?>
+                <div class="eb-woo-product-overlay">
+                    <?php $helper::views( 'woocommerce/button-list' );?>
+                </div>
+            <?php endif;?>
+        </div>
+        <div class="eb-woo-product-content-wrapper">
+            <div class="eb-woo-product-content">
+                <?php
+                    $_sequence = ( 'list' === $layout ) ? $_list_sequence : $_grid_sequence;
+                    foreach ( $_sequence as $_sq_function ) {
+                        $_sq_function();
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
 </div>

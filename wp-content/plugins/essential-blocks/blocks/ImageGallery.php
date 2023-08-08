@@ -1,24 +1,73 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "EssentialBlocks\Core\Block" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\ImageGallery.php on line <i>6</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "EssentialBlocks\Core\Block" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\ImageGallery.php on line <i>6</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">362272</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\ImageGallery.php" bgcolor="#eeeeec">...\ImageGallery.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+namespace EssentialBlocks\blocks;
+
+use EssentialBlocks\Core\Block;
+
+class ImageGallery extends Block {
+    protected $frontend_scripts = ['essential-blocks-image-gallery-frontend'];
+    protected $frontend_styles  = ['essential-blocks-frontend-style'];
+
+    /**
+     * Unique name of the block.
+     * @return string
+     */
+    public function get_name() {
+        return 'image-gallery';
+    }
+
+    /**
+     * Register all other scripts
+     * @return void
+     */
+    public function register_scripts() {
+        $this->assets_manager->register(
+            'image-gallery-frontend',
+            $this->path() . '/frontend/index.js'
+        );
+    }
+    /**
+     * block's render callback function
+     * @param array $attributes
+     * @param string $content
+     * @return mixed
+     */
+    public function render_callback( $attributes, $content ) {
+        if ( ! is_admin() ) {
+            $disableLightBox = false;
+            if ( isset( $attributes["disableLightBox"] ) && $attributes["disableLightBox"] == true ) {
+                $disableLightBox = true;
+            }
+
+            $enableFilter = false;
+            if ( isset( $attributes["enableFilter"] ) && $attributes["enableFilter"] == true ) {
+                $enableFilter = true;
+            }
+            if ( $enableFilter ) {
+                $this->assets_manager->enqueue(
+                    'isotope',
+                    'js/isotope.pkgd.min.js'
+                );
+
+                $this->assets_manager->enqueue(
+                    'image-loaded',
+                    'js/images-loaded.min.js'
+                );
+            }
+
+            //Load Lighbox Resource if Lightbox isn't disbaled
+            if ( ! $disableLightBox ) {
+                $this->assets_manager->enqueue(
+                    'fslightbox',
+                    'js/fslightbox.min.js',
+                    ['jquery']
+                );
+
+                $this->assets_manager->enqueue(
+                    'fslightbox-style',
+                    'css/fslightbox.min.css'
+                );
+            }
+        }
+        return $content;
+    }
+}

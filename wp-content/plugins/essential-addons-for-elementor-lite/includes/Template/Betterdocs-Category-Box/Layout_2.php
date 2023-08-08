@@ -1,45 +1,43 @@
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $default_multiple_kb in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-addons-for-elementor-lite\includes\Template\Betterdocs-Category-Box\Layout_2.php on line <i>9</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">362400</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-addons-for-elementor-lite\includes\Template\Betterdocs-Category-Box\Layout_2.php" bgcolor="#eeeeec">...\Layout_2.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function get_term_link() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-addons-for-elementor-lite\includes\Template\Betterdocs-Category-Box\Layout_2.php on line <i>16</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function get_term_link() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-addons-for-elementor-lite\includes\Template\Betterdocs-Category-Box\Layout_2.php on line <i>16</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">362400</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-addons-for-elementor-lite\includes\Template\Betterdocs-Category-Box\Layout_2.php" bgcolor="#eeeeec">...\Layout_2.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+use \Essential_Addons_Elementor\Classes\Helper;
+/**
+ * Template Name: Layout 2
+ *
+ */
+
+if ($default_multiple_kb) {
+    if(!empty($settings['selected_knowledge_base'])){
+        $button_link = str_replace('%knowledge_base%', $settings['selected_knowledge_base'], get_term_link($term->slug, 'doc_category'));
+    }else{
+        $button_link = str_replace('%knowledge_base%', 'non-knowledgebase', get_term_link($term->slug, 'doc_category'));
+    }
+} else {
+    $button_link = get_term_link($term->slug, 'doc_category');
+}
+
+echo '<a href="' . $button_link . '" class="eael-better-docs-category-box-post layout__2">';
+echo '<div class="eael-bd-cb-inner">';
+
+if ($settings['show_icon']) {
+    $cat_icon_id = get_term_meta($term->term_id, 'doc_category_image-id', true);
+
+    if ($cat_icon_id) {
+        $cat_icon = wp_get_attachment_image($cat_icon_id, 'thumbnail', ['alt' => esc_attr(get_post_meta($cat_icon_id, '_wp_attachment_image_alt', true))]);
+    } else {
+        $cat_icon = '<img src="' . BETTERDOCS_ADMIN_URL . 'assets/img/betterdocs-cat-icon.svg" alt="betterdocs-category-box-icon">';
+    }
+
+    echo '<div class="eael-bd-cb-cat-icon__layout-2">' . $cat_icon . '</div>';
+}
+
+if ($settings['show_title']) {
+    echo '<' . Helper::eael_validate_html_tag($settings['title_tag']) . ' class="eael-bd-cb-cat-title__layout-2"><span>' . $term->name . '</span></' . Helper::eael_validate_html_tag($settings['title_tag']) . '>';
+}
+
+if ($settings['show_count']) {
+    printf('<div class="eael-bd-cb-cat-count__layout-2"><span class="count-inner__layout-2">%s</span></div>', Helper::get_doc_post_count($term->count, $term->term_id));
+}
+
+echo '</div>';
+echo '</a>';

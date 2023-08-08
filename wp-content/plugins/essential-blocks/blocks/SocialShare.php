@@ -1,24 +1,96 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "EssentialBlocks\Core\Block" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\SocialShare.php on line <i>8</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "EssentialBlocks\Core\Block" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\SocialShare.php on line <i>8</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">362272</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\blocks\SocialShare.php" bgcolor="#eeeeec">...\SocialShare.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+namespace EssentialBlocks\blocks;
+
+use EssentialBlocks\Core\Block;
+use EssentialBlocks\Utils\Helper;
+
+class SocialShare extends Block {
+    protected $frontend_scripts = ['essential-blocks-social-share-js'];
+    protected $frontend_styles  = ['essential-blocks-fontawesome', 'essential-blocks-hover-css', 'essential-blocks-frontend-style'];
+
+    /**
+     * Unique name of the block.
+     * @return string
+     */
+    public function get_name() {
+        return 'social-share';
+    }
+
+    /**
+     * Register all other scripts
+     * @return void
+     */
+    public function register_scripts() {
+        $this->assets_manager->register(
+            'social-share-js',
+            $this->path() . '/frontend/index.js'
+        );
+    }
+
+    /**
+     * Block render callback.
+     *
+     * @param mixed $attributes
+     * @param mixed $content
+     * @return mixed
+     */
+    public function render_callback( $attributes, $content ) {
+        ob_start();
+        Helper::views( 'social-share', wp_parse_args(
+            $attributes, [
+                'classHook'          => '',
+                'blockId'            => '',
+                'profilesOnly'       => [],
+                'iconEffect'         => '',
+                'showTitle'          => true,
+                'isFloating'         => false,
+                'iconShape'          => '',
+                'wrapper_attributes' => get_block_wrapper_attributes(),
+                'block_object'       => $this
+            ]
+        ) );
+        return ob_get_clean();
+    }
+
+    /**
+     * Get Social Shareable link
+     *
+     * @param int $id current post/page id
+     * @param string $icon_text icon text to find the icon name
+     */
+    public static function eb_social_share_name_link( $id, $icon_text ) {
+        if ( empty( $icon_text ) ) {
+            return;
+        }
+
+        $post_title = get_the_title( $id );
+        $post_link  = get_the_permalink( $id );
+
+        if ( preg_match( '/facebook/', $icon_text ) ) {
+            return esc_url( 'https://www.facebook.com/sharer/sharer.php?u=' . $post_link );
+        } elseif ( preg_match( '/linkedin/', $icon_text ) ) {
+            return esc_url( 'https://www.linkedin.com/shareArticle?title=' . $post_title . "&url=" . $post_link . '&mini=true' );
+        } elseif ( preg_match( '/twitter/', $icon_text ) ) {
+            return esc_url( "https://twitter.com/share?text=" . $post_title . "&url=" . $post_link );
+        } elseif ( preg_match( '/pinterest/', $icon_text ) ) {
+            return esc_url( 'https://pinterest.com/pin/create/button/?url=' . $post_link );
+        } elseif ( preg_match( '/reddit/', $icon_text ) ) {
+            return esc_url( 'https://www.reddit.com/submit?url=' . $post_link . "&title=" . $post_title );
+        } elseif ( preg_match( '/tumblr/', $icon_text ) ) {
+            return esc_url( 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' . $post_link );
+        } elseif ( preg_match( '/whatsapp/', $icon_text ) ) {
+            return esc_url( 'https://api.whatsapp.com/send?text=' . $post_title . " " . $post_link );
+        } elseif ( preg_match( '/telegram/', $icon_text ) ) {
+            return esc_url( 'https://telegram.me/share/url?url=' . $post_link . '&text=' . $post_title );
+        } elseif ( preg_match( '/pocket/', $icon_text ) ) {
+            return esc_url( 'https://getpocket.com/edit?url=' . $post_link );
+        } elseif ( preg_match( '/envelope/', $icon_text ) ) {
+            return esc_url( 'mailto:?subject=' . $post_title . '&body=' . $post_link );
+        } elseif ( preg_match( '/xing/', $icon_text ) ) {
+            return esc_url( 'https://www.xing.com/spi/shares/new?url=' . $post_link );
+        } elseif ( preg_match( '/vk/', $icon_text ) ) {
+            return esc_url( 'https://vk.com/share.php?url=' . $post_link );
+        }
+    }
+}

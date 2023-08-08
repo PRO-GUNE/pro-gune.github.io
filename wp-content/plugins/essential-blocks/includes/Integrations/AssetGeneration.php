@@ -1,24 +1,63 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "EssentialBlocks\Integrations\ThirdPartyIntegration" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\AssetGeneration.php on line <i>4</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "EssentialBlocks\Integrations\ThirdPartyIntegration" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\AssetGeneration.php on line <i>4</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">362128</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\AssetGeneration.php" bgcolor="#eeeeec">...\AssetGeneration.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+namespace EssentialBlocks\Integrations;
+
+class AssetGeneration extends ThirdPartyIntegration {
+
+    public function __construct() {
+        $this->add_ajax( [
+            'eb_regenerate_assets' => [
+                'callback' => 'regenerate_assets',
+                'public'   => false
+            ]
+        ] );
+    }
+
+    /**
+     * regenerate_assets
+     */
+    public function regenerate_assets() {
+        $response_data = ['messsage' => __( "Sorry, you are not allowed to do this operation.", "essential-blocks" )];
+
+        if ( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json_error( $response_data );
+        }
+
+        /**
+         * Nonce verification
+         */
+        if ( !isset( $_POST['admin_nonce'] ) || ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
+            die( esc_html__( 'Nonce did not match', 'essential-blocks' ) );
+        }
+
+        if ( empty( $_POST ) ) {
+            $response_data = ['messsage' => __( 'No post data found!', 'essential-blocks' )];
+            wp_send_json_error( $response_data );
+        }
+
+        $upload_dir = wp_upload_dir();
+        $base_path  = $upload_dir['basedir'];
+        self::remove_directory_files( $base_path . '/eb-style' );
+        $response_data = [
+            'messsage' => __( 'Successfully saved data!', 'essential-blocks' )
+        ];
+        wp_send_json_success( $response_data );
+    }
+
+    public static function remove_directory_files( $src ) {
+        if ( is_dir( $src ) ) {
+            $dir = opendir( $src );
+            while ( false !== ( $file = readdir( $dir ) ) ) {
+                if (  ( $file != '.' ) && ( $file != '..' ) ) {
+                    $full = $src . '/' . $file;
+                    if ( is_dir( $full ) ) {
+                        self::remove_directory_files( $full );
+                    } else {
+                        unlink( $full );
+                    }
+                }
+            }
+            closedir( $dir );
+            rmdir( $src );
+        }
+    }
+}

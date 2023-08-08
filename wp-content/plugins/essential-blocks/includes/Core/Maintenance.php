@@ -1,21 +1,69 @@
-<br>
-<font size="1"><table class="xdebug-error xe-fatal-error" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Trait "EssentialBlocks\Traits\HasSingletone" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Core\Maintenance.php on line <i>7</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">362008</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Core\Maintenance.php" bgcolor="#eeeeec">...\Maintenance.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+namespace EssentialBlocks\Core;
+
+use EssentialBlocks\Traits\HasSingletone;
+
+class Maintenance {
+    use HasSingletone;
+
+    public function __construct(){
+        add_action('admin_init', [$this, 'check_version'], 5);
+
+        $this->init( ESSENTIAL_BLOCKS_PLUGIN_BASENAME );
+    }
+
+    public function check_version(){
+        $_version = get_option('essential_blocks_version');
+        $_code_version = ESSENTIAL_BLOCKS_VERSION;
+        $requires_update         = version_compare( $_version, $_code_version, '<' );
+
+        if( $requires_update ) {
+            // Update Related Works
+            if( ESSENTIAL_BLOCKS_WHATSNEW_REDIRECT != 'none' ) {
+                set_transient( 'essential_block_maybe_whatsnew_redirect', true, MINUTE_IN_SECONDS * 10 );
+            }
+
+            // Version Updated in DB.
+            $this->update_version();
+        }
+    }
+
+    /**
+     * Update WC version to current.
+     */
+    private function update_version() {
+        update_option( 'essential_blocks_version', ESSENTIAL_BLOCKS_VERSION );
+    }
+
+    /**
+     * Init Maintenance
+     *
+     * @since 2.0.1
+     * @return void
+     */
+    public function init( $plguin_basename ) {
+        register_activation_hook( $plguin_basename, [__CLASS__, 'activation'] );
+        register_uninstall_hook( $plguin_basename, [__CLASS__, 'uninstall'] );
+    }
+
+    /**
+     * Runs on activation
+     *
+     * @since 2.0.1
+     * @return void
+     */
+    public static function activation() {
+        update_option( 'essential_all_blocks', Blocks::defaults() );
+    }
+
+    /**
+     * Runs on uninstallation.
+     *
+     * @since 2.0.1
+     * @return void
+     */
+    public static function uninstall() {
+
+    }
+}

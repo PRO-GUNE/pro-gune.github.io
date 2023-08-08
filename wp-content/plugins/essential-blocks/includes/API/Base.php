@@ -1,21 +1,40 @@
-<br>
-<font size="1"><table class="xdebug-error xe-fatal-error" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Trait "EssentialBlocks\Traits\HasSingletone" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\API\Base.php on line <i>9</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">361944</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\API\Base.php" bgcolor="#eeeeec">...\Base.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+namespace EssentialBlocks\API;
+
+use EssentialBlocks\Utils\Helper;
+use EssentialBlocks\Traits\HasSingletone;
+use WP_REST_Server;
+
+abstract class Base {
+    use HasSingletone;
+
+    /**
+     * Register REST Routes
+     *
+     * @return void
+     */
+    abstract function register();
+
+    public function register_endpoint( $endpoint, $args = [] ){
+        register_rest_route( 'essential-blocks/v1', $endpoint, $args );
+    }
+
+    public function get( $endpoint, $args = [] ){
+        $_args = wp_parse_args( $args, [
+            'methods' => WP_REST_Server::READABLE,
+            'permission_callback' => '__return_true'
+        ]);
+
+        $this->register_endpoint($endpoint, $_args);
+    }
+
+    public function post( $endpoint, $args = [] ){
+        $_args = wp_parse_args( $args, [
+            'methods' => WP_REST_Server::CREATABLE,
+            'permission_callback' => '__return_true'
+        ]);
+
+        $this->register_endpoint($endpoint, $_args);
+    }
+}

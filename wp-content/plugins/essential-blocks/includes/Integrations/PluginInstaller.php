@@ -1,24 +1,38 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "EssentialBlocks\Integrations\ThirdPartyIntegration" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\PluginInstaller.php on line <i>6</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "EssentialBlocks\Integrations\ThirdPartyIntegration" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\PluginInstaller.php on line <i>6</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">362128</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\PluginInstaller.php" bgcolor="#eeeeec">...\PluginInstaller.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+namespace EssentialBlocks\Integrations;
+
+use EssentialBlocks\Utils\Installer;
+
+class PluginInstaller extends ThirdPartyIntegration {
+
+    public function __construct() {
+        $this->add_ajax( [
+            'plugin_installer' => [
+                'callback' => 'plugin_install',
+                'public'   => false
+            ]
+        ] );
+    }
+
+    /**
+     * Openverse plugin_install
+     */
+    public function plugin_install() {
+        if ( ! isset( $_POST['admin_nonce'] ) || ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
+            wp_send_json_error( __( 'Could not install the plugin.' ) );
+            die( esc_html__( 'Nonce did not match', 'essential-blocks' ) );
+        }
+
+        if ( isset( $_POST['slug'] ) && isset( $_POST['plugin_file'] ) ) {
+            $plugin                = [];
+            $plugin['slug']        = sanitize_text_field( $_POST['slug'] );
+            $plugin['plugin_file'] = sanitize_text_field( $_POST['plugin_file'] );
+            $installer             = Installer::get_instance();
+            $response              = $installer->install( $plugin );
+            wp_send_json_success( $response );
+        } else {
+            wp_send_json_error( __( 'Could not install the plugin.' ) );
+        }
+        wp_die();
+    }
+}

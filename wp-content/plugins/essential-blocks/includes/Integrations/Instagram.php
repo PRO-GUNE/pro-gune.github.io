@@ -1,24 +1,32 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "EssentialBlocks\Integrations\ThirdPartyIntegration" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\Instagram.php on line <i>5</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "EssentialBlocks\Integrations\ThirdPartyIntegration" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\Instagram.php on line <i>5</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">362128</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Integrations\Instagram.php" bgcolor="#eeeeec">...\Instagram.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+namespace EssentialBlocks\Integrations;
+
+class Instagram extends ThirdPartyIntegration {
+    public function __construct() {
+        $this->add_ajax( [
+            'get_instagram_access_token' => [
+                'callback' => 'get_instagram_access_token_callback',
+                'public'   => true
+            ]
+        ] );
+    }
+
+    /**
+     * Get Google Map API
+     */
+    public function get_instagram_access_token_callback() {
+        if ( ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
+            die( __( 'Nonce did not match', 'essential-blocks' ) );
+        }
+
+        $settings = get_option( 'eb_settings' );
+
+        if ( is_array( $settings ) && isset( $settings['instagramToken'] ) ) {
+            wp_send_json_success( $settings['instagramToken'] );
+        } else {
+            wp_send_json_error( "Couldn't found data" );
+        }
+        exit;
+    }
+}

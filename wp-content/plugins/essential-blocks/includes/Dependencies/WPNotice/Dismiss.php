@@ -1,24 +1,155 @@
-<br>
-<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "EssentialBlocks\Dependencies\WPNotice\Utils\Base" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Dependencies\WPNotice\Dismiss.php on line <i>12</i>
-</th></tr>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "EssentialBlocks\Dependencies\WPNotice\Utils\Base" not found in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Dependencies\WPNotice\Dismiss.php on line <i>12</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0002</td>
-<td bgcolor="#eeeeec" align="right">362536</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\includes\Dependencies\WPNotice\Dismiss.php" bgcolor="#eeeeec">...\Dismiss.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+namespace EssentialBlocks\Dependencies\WPNotice;
+
+use EssentialBlocks\Dependencies\WPNotice\Utils\Base;
+use EssentialBlocks\Dependencies\WPNotice\Utils\Helper;
+use EssentialBlocks\Dependencies\WPNotice\Utils\Storage;
+
+/**
+ * @property int $recurrence
+ */
+class Dismiss extends Base {
+	use Helper;
+
+	private $id;
+	private $scope = 'user';
+	private $app   = null;
+	private $hook  = null;
+
+	public function __construct( $id, $options, $app ){
+		$this->id = $id;
+		$this->app = $app;
+
+		if( ! empty( $options ) ) {
+			foreach( $options as $key => $_value ) {
+				$this->{$key} = $_value;
+			}
+		}
+
+		$this->hook = $this->app->app .'_wpnotice_dismiss_notice';
+
+		add_action( 'wp_ajax_'. $this->hook, [ $this, 'ajax_maybe_dismiss_notice' ] );
+	}
+
+	/**
+	 * Print the script for dismissing the notice.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @return void
+	 */
+	public function print_script() {
+		$nonce = wp_create_nonce( 'wpnotice_dismiss_notice_' . $this->id );
+		$_id = '#wpnotice-' . esc_attr( $this->app->app ) . '-' . esc_attr( $this->id );
+		?>
+		<script>
+			window.addEventListener( 'load', function() {
+				var dismissBtn  = document.querySelector( '<?php echo $_id ?> .notice-dismiss' );
+				var extraDismissBtn  = document.querySelectorAll( '<?php echo $_id ?> .dismiss-btn' );
+
+				function wpNoticeDismissFunc( event ) {
+					event.preventDefault();
+
+					var httpRequest = new XMLHttpRequest(),
+						postData    = '',
+						dismiss = event.target.dataset?.hasOwnProperty('dismiss') && event.target.dataset.dismiss || false,
+						later = event.target.dataset?.hasOwnProperty('later') && event.target.dataset.later || false;
+
+					if( dismiss || later ) {
+						jQuery(event.target.offsetParent).slideUp(200);
+					}
+
+					// Data has to be formatted as a string here.
+					postData += 'id=<?php echo esc_attr( rawurlencode( $this->id ) ); ?>';
+					postData += '&action=<?php echo esc_attr( $this->hook ); ?>';
+					if( dismiss ) {
+						postData += '&dismiss=' + dismiss;
+					}
+					if( later ) {
+						postData += '&later=' + later;
+					}
+
+					postData += '&nonce=<?php echo esc_html( $nonce ); ?>';
+
+					httpRequest.open( 'POST', '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>' );
+					httpRequest.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+					httpRequest.send( postData );
+				}
+
+				// Add an event listener to the dismiss button.
+				dismissBtn && dismissBtn.addEventListener( 'click', wpNoticeDismissFunc);
+				if( extraDismissBtn.length > 0 ) {
+					extraDismissBtn.forEach( btn => btn.addEventListener( 'click', wpNoticeDismissFunc))
+				}
+			});
+		</script>
+		<?php
+	}
+
+
+	/**
+	 * Run check to see if we need to dismiss the notice.
+	 * If all tests are successful then call the dismiss_notice() method.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @return void
+	 */
+	public function ajax_maybe_dismiss_notice() {
+		// Sanity check: Early exit if we're not on a wptrt_dismiss_notice action.
+		if ( ! isset( $_POST['action'] ) || $this->hook !== $_POST['action'] ) {
+			return;
+		}
+
+		// Sanity check: Early exit if the ID of the notice is not the one from this object.
+		if ( ! isset( $_POST['id'] ) || $this->id !== $_POST['id'] ) {
+			return;
+		}
+
+		// Security check: Make sure nonce is OK.
+		check_ajax_referer( 'wpnotice_dismiss_notice_' . $this->id, 'nonce', true );
+
+		if( isset( $_POST['later'] ) ) {
+			$_recurrence = intval( $this->recurrence ) || 15;
+			$_queue      = $this->app->storage()->get();
+
+			$_queue[ $this->id ]['start']  = $this->strtotime( "+$_recurrence days" );
+			$_queue[ $this->id ]['expire'] = $this->strtotime( "+". ($_recurrence + 3) ." days" );
+			$this->app->storage()->save( $_queue );
+			return;
+		}
+
+		// If we got this far, we need to dismiss the notice.
+		$this->dismiss_notice();
+	}
+
+	/**
+	 * Actually dismisses the notice.
+	 *
+	 * @access private
+	 * @since 1.0
+	 * @return void
+	 */
+	public function dismiss_notice() {
+		if ( 'user' === $this->scope ) {
+			return $this->app->storage()->save_meta( $this->id );
+		}
+
+		$_key = $this->app->app . '_' . $this->id . '_notice_dismissed';
+		return $this->app->storage()->save( $_key );
+	}
+
+	/**
+	 * Check if is dismissed or not
+	 * @return boolean
+	 */
+	public function is_dismissed(){
+		if ( 'user' === $this->scope ) {
+			return $this->app->storage()->get_meta( $this->id );
+		}
+
+		$_key = $this->app->app . '_' . $this->id . '_notice_dismissed';
+		return $this->app->storage()->get( $_key );
+	}
+}

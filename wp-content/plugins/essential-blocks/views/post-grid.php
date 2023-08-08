@@ -1,130 +1,75 @@
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $blockId in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php on line <i>5</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361712</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php" bgcolor="#eeeeec">...\post-grid.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $classHook in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php on line <i>6</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361712</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php" bgcolor="#eeeeec">...\post-grid.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $blockId in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php on line <i>9</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361712</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php" bgcolor="#eeeeec">...\post-grid.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $preset in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php on line <i>10</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361712</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php" bgcolor="#eeeeec">...\post-grid.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $className in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php on line <i>11</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361712</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php" bgcolor="#eeeeec">...\post-grid.php<b>:</b>0</td>
-</tr>
-</table></font>
 
-<div class="<br />
-<font size='1'><table class='xdebug-error xe-uncaught-exception' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
-<tr><th align='left' bgcolor='#f57900' colspan=">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function esc_attr_e() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php on line <i>15</i>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function esc_attr_e() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php on line <i>15</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361712</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\post-grid.php" bgcolor="#eeeeec">...\post-grid.php<b>:</b>0</td>
-</tr>
+<?php
+    $_parent_classes = [
+        'eb-parent-wrapper',
+        'eb-parent-' . $blockId,
+        $classHook
+    ];
+    $_wrapper_classes = [
+        $blockId,
+        $preset,
+        $className
+    ];
+?>
 
+<div class="<?php esc_attr_e( implode( ' ', $_parent_classes ) );?>">
+    <div
+        class="eb-post-grid-wrapper                                                                                                                                                                                                                                                                                                                                                               <?php esc_attr_e( implode( ' ', $_wrapper_classes ) );?>"
+        data-id="<?php esc_attr_e( $blockId );?>"
+        data-querydata="<?php esc_attr_e( serialize( $queryData ) );?>"
+        data-attributes="<?php esc_attr_e( serialize( $essentialAttr ) );?>">
+
+        <?php
+            /**
+             * Category Filter Views
+             */
+            if ( $showTaxonomyFilter && ! empty( $selectedTaxonomy ) && ! empty( $selectedTaxonomyItems ) ) {
+                $selectedTaxonomy = json_decode( $selectedTaxonomy );
+                $categories       = json_decode( $selectedTaxonomyItems );
+                $helper::views( 'post-partials/category-filter', [
+                    'taxonomy'   => $selectedTaxonomy->value,
+                    'categories' => $categories
+                ] );
+            }
+
+            /**
+             * Post Grid Markup
+             */
+
+            if ( ! empty( $posts ) ) {
+                $_defined_vars = get_defined_vars();
+                $_params       = isset( $_defined_vars['data'] ) ? $_defined_vars['data'] : [];
+
+                $_params = array_merge( $_params, [
+                    'posts'      => $posts,
+                    'queryData'  => isset( $queryData ) ? $queryData : [],
+                    'source'     => isset( $queryData['source'] ) ? $queryData['source'] : 'post',
+                    'headerMeta' => ! empty( $headerMeta ) ? json_decode( $headerMeta ) : [],
+                    'footerMeta' => ! empty( $footerMeta ) ? json_decode( $footerMeta ) : []
+                ] );
+
+                $helper::views( 'post-partials/grid-markup', $_params );
+            }
+
+            /**
+             * No Post Markup
+             */
+            if ( empty( $posts ) ) {
+                $helper::views( 'common/no-content', [
+                    'content' => __( 'No Posts Found', 'essential-blocks' )
+                ] );
+            }
+
+            /**
+             * Pagination Markup
+             */
+            if ( ! empty( $posts ) && is_array( $loadMoreOptions ) && is_array( $queryData ) ) {
+                $helper::views( 'common/pagination', array_merge(
+                    $loadMoreOptions, $queryData, [
+                        'posts' => $posts
+                    ]
+                ) );
+            }
+        ?>
+    </div>
 </div>

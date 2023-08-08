@@ -17,9 +17,9 @@
  */
 @font-face {
 	font-family: fontIconPicker;
-	src: url(httppro-gune.github.io/wp-content/plugins/essential-blocks/assets/fonts/fontIconPicker.ttf) format("truetype"),
-		url(httppro-gune.github.io/wp-content/plugins/essential-blocks/assets/fonts/fontIconPicker.woff) format("woff"),
-		url(httppro-gune.github.io/wp-content/plugins/essential-blocks/assets/fonts/fontIconPicker.svg#fontIconPicker) format("svg");
+	src: url(../fonts/fontIconPicker.ttf) format("truetype"),
+		url(../fonts/fontIconPicker.woff) format("woff"),
+		url(../fonts/fontIconPicker.svg#fontIconPicker) format("svg");
 	font-weight: 400;
 	font-style: normal;
 }

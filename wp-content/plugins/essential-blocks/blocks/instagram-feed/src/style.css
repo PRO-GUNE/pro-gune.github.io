@@ -127,7 +127,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: url(httppro-gune.github.io/wp-content/plugins/essential-blocks/blocks/instagram-feed/assets/images/instagram-icon-white.svg) no-repeat center center;
+  background: url(../assets/images/instagram-icon-white.svg) no-repeat center center;
   background-size: 30px 30px;
   content: "";
   opacity: 0;

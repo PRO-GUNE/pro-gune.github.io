@@ -1,108 +1,51 @@
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $blockId in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\instagram-feed.php on line <i>4</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361936</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\instagram-feed.php" bgcolor="#eeeeec">...\instagram-feed.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $classHook in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\instagram-feed.php on line <i>5</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361936</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\instagram-feed.php" bgcolor="#eeeeec">...\instagram-feed.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $blockId in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\instagram-feed.php on line <i>8</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361936</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\instagram-feed.php" bgcolor="#eeeeec">...\instagram-feed.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $enableLink in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\instagram-feed.php on line <i>12</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361936</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\instagram-feed.php" bgcolor="#eeeeec">...\instagram-feed.php<b>:</b>0</td>
-</tr>
-</table></font>
-<div class="eb-parent-wrapper <br />
-<font size='1'><table class='xdebug-error xe-uncaught-exception' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
-<tr><th align='left' bgcolor='#f57900' colspan=">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function esc_attr_e() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\instagram-feed.php on line <i>15</i>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function esc_attr_e() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\instagram-feed.php on line <i>15</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361936</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\instagram-feed.php" bgcolor="#eeeeec">...\instagram-feed.php<b>:</b>0</td>
-</tr>
+<?php
 
+$_parent_wrapper_classes = [
+    "eb-parent-$blockId",
+    $classHook
+];
+$_wrapper_classes = [
+    $blockId,
+    ! empty( $align ) ? 'align' . $align : ''
+];
+
+$target = $enableLink && $openInNewTab ? '_blank' : '';
+
+?>
+<div class="eb-parent-wrapper <?php esc_attr_e(implode(' ', $_parent_wrapper_classes)); ?>">
+    <div class="eb-instagram-wrapper <?php esc_attr_e(implode(' ', $_wrapper_classes)); ?>">
+        <div class="eb-instagram__gallery">
+
+            <?php
+                foreach( $images as $key => $image ) {
+                    $media_type = esc_attr($image->media_type);
+                    $image_url  = ($media_type === "VIDEO") ? esc_url($image->thumbnail_url) : esc_url($image->media_url);
+                    $image_alt  = isset($image->caption) ? $image->caption : '';
+
+                    if( $key < $numberOfImages ) {
+                        $helper::views('insta-partials/single', [
+                            'image_url'       => $image_url,
+                            'image_alt'       => $image_alt,
+                            'timestamp'       => $image->timestamp,
+                            'permalink'       => $image->permalink,
+                            'target'          => $target,
+                            'enableLink'      => $enableLink,
+                            'layout'          => $layout,
+                            'overlayStyle'    => $overlayStyle,
+                            'cardStyle'       => $cardStyle,
+                            'showMeta'        => $showMeta,
+                            'hasEqualImages'  => $hasEqualImages,
+                            'showProfileName' => $showProfileName,
+                            'showProfileImg'  => $showProfileImg,
+                            'profileImg'      => $profileImg,
+                            'profileName'     => $profileName,
+                            'username'        => $image->username,
+                            'caption'         => isset( $image->caption ) ? $image->caption : '',
+                            'showCaptions'    => $showCaptions,
+                        ]);
+                    }
+                }
+            ?>
+        </div>
+    </div>
 </div>

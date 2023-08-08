@@ -1,69 +1,51 @@
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $layout in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\insta-partials\single.php on line <i>4</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361712</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\insta-partials\single.php" bgcolor="#eeeeec">...\single.php<b>:</b>0</td>
-</tr>
-</table></font>
-<br>
-<font size="1"><table class="xdebug-error xe-warning" dir="ltr" border="1" cellspacing="0" cellpadding="1">
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Warning: Undefined variable $overlayStyle in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\insta-partials\single.php on line <i>4</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361712</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\insta-partials\single.php" bgcolor="#eeeeec">...\single.php<b>:</b>0</td>
-</tr>
-</table></font>
+<?php
+
+$_item_wrapper_classes = [
+    ($layout === "card") ? "instagram__gallery__item--" . $cardStyle : "instagram__gallery__item--" . $overlayStyle,
+    isset( $hasEqualImages ) ? 'has__equal__height' : ''
+];
+
+?>
 
 <div class="instagram__gallery__col">
-    <div class="instagram__gallery__item <br />
-<font size='1'><table class='xdebug-error xe-uncaught-exception' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
-<tr><th align='left' bgcolor='#f57900' colspan=">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function esc_attr_e() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\insta-partials\single.php on line <i>11</i>
-<tr><th align="left" bgcolor="#f57900" colspan="5">
-<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function esc_attr_e() in C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\insta-partials\single.php on line <i>11</i>
-</th></tr>
-<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
-<tr>
-<th align="center" bgcolor="#eeeeec">#</th>
-<th align="left" bgcolor="#eeeeec">Time</th>
-<th align="left" bgcolor="#eeeeec">Memory</th>
-<th align="left" bgcolor="#eeeeec">Function</th>
-<th align="left" bgcolor="#eeeeec">Location</th>
-</tr>
-<tr>
-<td bgcolor="#eeeeec" align="center">1</td>
-<td bgcolor="#eeeeec" align="center">0.0001</td>
-<td bgcolor="#eeeeec" align="right">361712</td>
-<td bgcolor="#eeeeec">{main}(  )</td>
-<td title="C:\wamp64\www\pro-gune.github.io\wp-content\plugins\essential-blocks\views\insta-partials\single.php" bgcolor="#eeeeec">...\single.php<b>:</b>0</td>
-</tr>
+    <div class="instagram__gallery__item <?php esc_attr_e(implode(' ', $_item_wrapper_classes)); ?>">
+        <?php
+            if( 'card' === $layout && ( $showProfileName || $showProfileImg ) ) {
+                $helper::views('insta-partials/author', [
+                    'showProfileName' => $showProfileName,
+                    'showProfileImg'  => $showProfileImg,
+                    'profileImg'      => $profileImg,
+                    'profileName'     => $profileName,
+                    'username'        => $username,
+                ]);
+            }
+        ?>
 
-</div>
+        <?php if( $enableLink ) : ?>
+            <a href="<?php esc_attr_e( esc_url( $permalink )); ?>" target="<?php esc_attr_e($target); ?>">
+        <?php endif; ?>
+            <div class="instagram__gallery__thumb">
+                <div class="thumb__wrap">
+                    <img src="<?php esc_attr_e( esc_url( $image_url )); ?>" alt="<?php esc_attr_e($image_alt); ?>" />
+                </div>
+                <?php
+                    if( $showCaptions && ! empty( $caption ) ) {
+                        $helper::views('insta-partials/caption', [
+                            'caption' => $caption,
+                        ]);
+                    }
+                ?>
+            </div>
+        <?php if( $enableLink ): ?>
+            </a>
+        <?php endif; ?>
+
+        <?php
+            if( $showMeta ) {
+                $helper::views('insta-partials/meta', [
+                    'timestamp' => $timestamp
+                ]);
+            }
+        ?>
+    </div>
 </div>
