@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments for Chathura Gunasekara	</title>
-	<atom:link href="httppro-gune.github.io//comments/feed/" rel="self" type="application/rss+xml" />
-	<link>httppro-gune.github.io/</link>
+	<atom:link href="https://pro-gune.github.io/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>https://pro-gune.github.io/</link>
 	<description>Portfolio site</description>
 	<lastBuildDate>Tue, 08 Aug 2023 06:02:05 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -20,11 +20,11 @@
 	<item>
 		<title>
 		Comment on Hello world! by A WordPress Commenter		</title>
-		<link>httppro-gune.github.io//hello-world/#comment-1</link>
+		<link>https://pro-gune.github.io/hello-world/#comment-1</link>
 
 		<dc:creator><![CDATA[A WordPress Commenter]]></dc:creator>
 		<pubDate>Tue, 08 Aug 2023 06:02:05 +0000</pubDate>
-		<guid isPermaLink="false">httppro-gune.github.io//?p=1#comment-1</guid>
+		<guid isPermaLink="false">https://pro-gune.github.io/?p=1#comment-1</guid>
 
 					<description><![CDATA[Hi, this is a comment.
 To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.

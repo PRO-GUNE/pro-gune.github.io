@@ -7,7 +7,7 @@
 }
 
 .wpforms-admin-empty-state-container .waving-hand-emoji {
-  background-image: url(httppro-gune.github.io//wp-content/plugins/wpforms-lite/assets/images/empty-states/waving-hand-emoji.png);
+  background-image: url(https://pro-gune.github.io/wp-content/plugins/wpforms-lite/assets/images/empty-states/waving-hand-emoji.png);
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 24px 24px;
@@ -260,8 +260,8 @@
 
 @font-face {
   font-family: 'Icon WPForms';
-  src: url("httppro-gune.github.io//wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.eot");
-  src: url("httppro-gune.github.io//wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.eot#iefix") format("embedded-opentype"), url("httppro-gune.github.io//wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.woff2") format("woff2"), url("httppro-gune.github.io//wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.woff") format("woff"), url("httppro-gune.github.io//wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.ttf") format("truetype"), url("httppro-gune.github.io//wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.svg") format("svg");
+  src: url("https://pro-gune.github.io/wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.eot");
+  src: url("https://pro-gune.github.io/wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.eot#iefix") format("embedded-opentype"), url("https://pro-gune.github.io/wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.woff2") format("woff2"), url("https://pro-gune.github.io/wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.woff") format("woff"), url("https://pro-gune.github.io/wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.ttf") format("truetype"), url("https://pro-gune.github.io/wp-content/plugins/wpforms-lite/assets/images/integrations/elementor/font/icon-wpforms.svg") format("svg");
 }
 
 #elementor-editor-wrapper .icon-wpforms, .elementor-edit-area .icon-wpforms {
@@ -374,7 +374,7 @@
 
 .et-db #et-boc .et-l .et-fb-modules-list ul > li.wpforms_selector::before {
   content: '';
-  background-image: url("httppro-gune.github.io//wp-content/plugins/wpforms-lite/assets/images/integrations/divi/wpforms-icon.svg");
+  background-image: url("https://pro-gune.github.io/wp-content/plugins/wpforms-lite/assets/images/integrations/divi/wpforms-icon.svg");
   height: 16px;
   font-variant: normal;
   background-position: center center;
