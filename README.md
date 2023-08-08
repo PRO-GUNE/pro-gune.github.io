@@ -1,2 +1,3 @@
 # pro-gune.github.io
-Portofolio Website
+Portofolio Website created using WordPress
+
