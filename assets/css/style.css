@@ -616,7 +616,12 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background: rgba(69, 80, 91, 0.8);
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(233, 225, 225, 0.532);
+  border-radius: 10px;
 }
 
 .portfolio .portfolio-wrap::before {
@@ -732,6 +737,13 @@ section {
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
+.img-fluid {
+  height: 300px;
+  width: auto;
+  object-fit: contain;
+  justify-self: center;
+}
+
 .portfolio-details {
   padding-top: 40px;
 }
@@ -750,7 +762,7 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #0563bb;
+  border: 1px solid #0563bb
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
