@@ -737,11 +737,14 @@ section {
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
-.img-fluid {
-  height: 300px;
-  width: auto;
-  object-fit: contain;
-  justify-self: center;
+@media (min-width: 992px) {
+  .img-fluid {
+    max-width: 100%;
+    max-height: 500px;
+    margin: 0 auto;   /* center inside container */
+    object-fit: contain;
+    display: block;
+  }
 }
 
 .portfolio-details {
