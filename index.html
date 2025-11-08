@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>👋🎓 Chathura Gunasekara</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Removed bootstrap favicon as requested -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom quick styles to improve readability and alignment -->
+  <style>
+    :root{
+      --accent: #4e73df;
+      --muted: #6c757d;
+    }
+    html,body{height:100%;}
+    body{
+      font-family: 'Inter', 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
+      font-size: 1.05rem; /* slightly larger base font */
+      line-height: 1.7;
+      color: #222;
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    }
+
+    /* Hero tweaks */
+    #hero h1{font-size:2.4rem; font-weight:700; margin-bottom:.25rem}
+    #hero p{font-size:1.15rem; color:var(--muted);}
+
+    /* Section titles */
+    .section-title h2{font-family:'Poppins', 'Inter'; font-weight:700; letter-spacing:0.2px}
+    .section-title p{font-size:1.02rem; color:var(--muted)}
+
+    /* Resume / Experience: left align and spacing improvements */
+    #resume .resume-title{font-size:1.25rem; font-weight:700; margin-bottom:1rem}
+    #resume .resume-item{ text-align:left; margin-bottom:1.5rem; padding-left:.25rem}
+    #resume .resume-item h4{font-weight:700; margin-bottom:.25rem}
+    #resume .resume-item h5{color:var(--muted); font-weight:600; margin-bottom:.5rem}
+    #resume .resume-item p{color:#333; margin-bottom:.5rem; font-size:0.98rem}
+    #resume ul{margin-left:1.1rem}
+
+    /* Skills and progress bars: make values clearer */
+    .skill{display:block; font-weight:600; margin-bottom:.4rem}
+    .progress{margin-bottom:1rem}
+
+    /* Cards, portfolio spacing */
+    .portfolio-wrap{border-radius:8px; overflow:hidden; box-shadow:0 6px 18px rgba(50,50,93,0.06)}
+
+    /* Footer */
+    #footer{background:#fff; padding:2rem 0; border-top:1px solid #eee}
+
+    /* Improve contrast of small icons */
+    .social-links a{color:var(--muted); transition:all .18s}
+    .social-links a:hover{color:var(--accent)}
+
+    /* Make sure buttons are slightly bigger */
+    .btn{font-weight:600}
+
+    /* Small responsiveness adjustments */
+    @media (max-width: 768px){
+      #hero h1{font-size:1.8rem}
+      body{font-size:1rem}
+    }
+  </style>
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Updated: Jul 27 2023 with Bootstrap v5.3.1
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+
+    <nav id="navbar" class="navbar nav-menu">
+      <ul>
+        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a>
+        </li>
+        <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+      </ul>
+    </nav><!-- .nav-menu -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+<!--     <img src="assets/img/hero-bg.jpg"> -->
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Chathura Gunasekara</h1>
+      <p>I'm <span class="typed"
+          data-typed-items="a Software Engineer,a Robotics Engineer,a Teacher,a Multi Instrumentalist,a Composer,an Athelete"></span>
+      </p>
+      <div class="social-links">
+        <a href="https://github.com/PRO-GUNE" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://www.facebook.com/chathura.gunasekera.5" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/chathura__gunasekera/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://medium.com/@chathuragunasekera" class="medium"><i class="bx bxl-medium"></i></a>
+        <a href="https://www.linkedin.com/in/chathura-gunasekara/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <!-- Format to be spaced and visually apealling -->
+        <div class="section-title">
+          <h2>About</h2>
+          <p>I'm Chathura Gunasekara, a dynamic Computer Science and Engineering undergraduate
+            at the University of Moratuwa, specializing in Integrated Computer Engineering, and I am passionate about
+            Embedded Systems, Robotics and Automation, Machine Learning, and Computer Vision.
+            A multi-talented individual with a strong academic track record, including a First Class CGPA(3.90/4.0),
+            I'm a well-rounded individual excelling not only in tech but also in sports and music. Taking on leadership
+            roles and responsibilities, including executive membership at university societies and department
+            representative, I am committed to continuous learning and self-improvement.
+            My research interests include Quantum computing, Post-Quantum Cryptography, Secure Embedded Systems, and Robotics and Automation
+            If you're looking for a versatile engineer with a knack for innovation, let's collaborate to shape the
+            future together!
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 ">
+            <img src="assets/img/profile-img.jpg" class="img-fluid img-thumbnail rounded float-start" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 mt-5">
+                <ul>
+                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span> BSc Eng Hons, Computer Science & Engineering
+                      Honours</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
+                    <span>chathura.20@cse.mrt.ac.lk</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Core Skills</h2>
+        </div>
+        <div class="row skills-content justify-content-around">
+
+          <div class="col-lg-5">
+
+            <div class="progress">
+              <span class="skill">🔰 Secuer Embedded Systems <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">🔰 Computer Architecture<i class="val">60%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">🔰 Post-Quantum Cryptography <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">🔰 Concurrent Programming <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5">
+
+            <div class="progress">
+              <span class="skill">🔰 Robotics and Automation <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">🔰 Mathematics <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">🔰 Quantum Computing <i class="val">60%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="progress">
+              <span class="skill">🔰 Systems Design and Validation <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Soft Skills</h2>
+        </div>
+        <div class="row skills-content justify-content-around">
+
+          <div class="col-lg-5">
+
+            <div class="progress">
+              <span class="skill">💎 Effective Communication<i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">💎 Leadership and Team Management<i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">💎 Critical Thinking <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5">
+
+            <div class="progress">
+              <span class="skill">💎 Time Management <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div> 
+
+            <div class="progress">
+              <span class="skill">💎 Teaching <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">💎 Professionalism <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Experience</h2>
+          <div class="section d-flex justify-content-around m-2 p-5">
+            <div class="text-center"><a href="https://github.com/PRO-GUNE/pro-gune.github.io/tree/gh-pages/documents/CV.pdf"
+                target="_blank"><button type="button" class="btn btn-primary btn-lg btn-block">🧾 View CV</button></a>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>B.Sc. Engineering Honours<br> Computer Science and Engineering</h4>
+              <h5>Mar 2021 - Jul 2025</h5>
+              <p><em>B.Sc Engineering Gradate at Computer Science and Engineering in University of
+                  Moratuwa specializing in the Integrated Computer Engineering Streams focusing on Embedded Systems
+                  Engineering, IoT and Robotics and Automation. Learning Machine Learning and Computer Vision to
+                  complement the focused fields</em></p>
+              <p>CGPA - 3.90/4.0</p>
+              <p>Dean's List Candidate for</p>
+              <ul>
+                <li>Semester 2 - 3.96/4.0</li>
+                <li>Semester 3 - 3.92/4.0</li>
+                <li>Semester 4 - 3.93/4.0</li>
+                <li>Semester 6 - 3.95/4.0</li>
+                <li>Semester 7 - 3.95/4.0</li>
+                <li>Semester 7 - 3.97/4.0</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Teaching Assistant</h4>
+              <h5>Feb 2025 - Jun 2025</h5>
+              <p><em>University of Moratuwa</em></p>
+              <p>Started work as a teaching assistant for the Computer Science and Engineering Department of University
+                of Moratuwa for the Robotics and Automation module </p>
+            </div>
+            <div class="resume-item">
+              <h4>Teaching Assistant</h4>
+              <h5>Jul 2023 - Jun 2024</h5>
+              <p><em>University of Moratuwa</em></p>
+              <p>Started work as a teaching assistant for the Computer Science and Engineering Department of University
+                of Moratuwa for the Computer Architecture module </p>
+            </div>
+            <div class="resume-item">
+              <h4>Software Engineerin Internship</h4>
+              <h5>Nov 2023 - May 2024</h5>
+              <p><em>WSO2 LANKA</em></p>
+              <p>Contributed as a Software Engineering Intern at WSO2 IAM team, by carrying out research on a adoptable
+                authorization solution for IAM</p>
+            </div>
+            <div class="resume-item">
+              <h4>G.C.E Advanced Level Examination</h4>
+              <h5>2017 - 2019</h5>
+              <p><em>Dharmaraja College - Kandy, Sri Lanka</em></p>
+              <p>Secured 4 A passes at the 2019 G.C.E Advanced Level examination</p>
+            </div>
+            <h3 class="resume-title">Certifications</h3>
+            <div class="resume-item pb-0">
+              <h4> <a href="https://coursera.org/share/4eae2a5f5f94464fc512e6b74f56f101" target="_blank">Algorithmic
+                  Toolbox - UC San Diego <i class="fa-solid fa-up-right-from-square"></i></a></h4>
+            </div>
+
+            <div class="resume-item pb-0">
+              <h4> <a href="https://courses.edx.org/certificates/94915b327fcc4bfbb6e56e7f255b6883" target="_blank">
+                  CS50x Course - Harvard University
+                  <i class="fa-solid fa-up-right-from-square"></i></a></h4>
+            </div>
+
+            <h3 class="resume-title">Volunteering</h3>
+            <div class="resume-item">
+              <h4>Department Representative - Computer Science and Engineering Department</h4>
+              <h5>2023 - Present</h5>
+              <p><em>An active Department Representative - Computer Science and Engineering Department - University of
+                  Moratuwa</em></p>
+            </div>
+
+            <div class="resume-item">
+              <h4>Treasurer - Classical Music Society - University of Moratuwa</h4>
+              <h5>2023 - Present</h5>
+              <p><em>Active Treasurer for the Classical Music Society - University of Moratuwa</em></p>
+            </div>
+
+            <div class="resume-item">
+              <h4>STEAM Pillar - Technical Team Lead - Sasnka Sansada</h4>
+              <h5>2022 - 2023</h5>
+              <p><em>Technical team lead leading and contributing to develop tools and platforms for Sasnaka Sansada
+                  Volunteers to keep record of their volunteering efforts. Created a GAANT Chart based task tracking
+                  system for seperate fields and integrated with a website</em></p>
+            </div>
+
+          </div>
+          <div class="col-lg-6">
+            <h3 class="resume-title">Publications</h3>
+            <div class="resume-item">
+              <h4>Real-time, Scalable and Extensible Object Filtering and Detection System Using Kinect Sensor and ROS2 Foxy implemented with C++</h4>
+              <h5>ERU Symposium 2023 <em>[Best Paper Nominee]</em><a href="https://dl.lib.uom.lk/items/66637405-8cd2-4b41-bf23-5c54511abda5"><i class="bx bx-link"></i></h5>
+            </div>
+            <div class="resume-item">
+              <h4>Reconfigurable Hardware Design of NTT Based Polynomial Multiplication Accelerator for Post Quantum Cryptography</h4>
+              <h5>MERCon 2025 <em>[Best Paper Nominee]</em><a href="https://ieeexplore.ieee.org/document/11217056"><i class="bx bx-link"></i></h5>
+            </div>
+            <h3 class="resume-title">Honours and Awards</h3>
+            <div class="resume-item">
+              <h4>ABU RoboCon 2023 - Represented Sri Lanka</h4>
+              <h5>2023</h5>
+              <p><em>Represented Sri Lanka in ABU Robocon 2023 international robotics competition competiting against
+                  Asia-Pacific region countries</em></p>
+              <ul>
+                <li>Build Image recognition system to identify target poles and calculate the distance to those poles
+                  using Kinect Camera.</li>
+                <li>Design of chasis for the larger robot</li>
+                <li>Coding and building the navigation ability of the larger robot</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Internation Mathematics Olympiad - Represented University of Moratuwa</h4>
+              <h5>August 2022</h5>
+              <p><em>Represented Unviersity of Moratuwa at the International Mathematics Olympiad competition 2022 </em>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>IUHD Mathematical Olympiad 2022 - Third Prize Diploma</h4>
+              <h5>April 2022</h5>
+              <p><em>Won Third Prize Diploma award for IUHD Mathematical Olympiad - International Mathematics
+                  Competition</em>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>University Colors Insignia</h4>
+              <h5> 2022, 2023</h5>
+              <p><em>Awarded University Colors Insignia for being a member of the Champion Team of Mens Table Tennis
+                  Inter University Championship - 2022 and Sri Lanka University Games - 2023</em>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>Sangeeth Abhimani Award</h4>
+              <h5>2018</h5>
+              <p><em>Awarded the Sangeeth Abhimani Honorary awarded for placing 1st Place All Island Ragadhari Sitar at
+                  Sri Lanka International Music Competition</em>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>Table Tennis Pro Tour - Thailand - Under 12 Boys Consolation Champion</h4>
+              <h5>2012</h5>
+              <p><em>Became the Under 12 Boys Consolation Champion and the Under 15 Boys Consolation Team Runner's Up at
+                  the International Table Tennis Tournament - Table Tennis Pro Tour - Thailand</em>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>Junior Natioal Champion - Table Tennis - Under 12 Boys</h4>
+              <h5>2011, 2012</h5>
+              <p><em>Became the consecutive under 12 boys Table Tennis Junior Nationals Champion - Under 12 Boys</em>
+              </p>
+            </div>
+
+            <h3 class="resume-title">Entrepreneur</h3>
+            <div class="resume-item">
+              <h4>Managing Director - Tecview Online</h4>
+              <h5>2022 - 2024</h5>
+              <p><em>A knowledge based learning platform for Engineering students to provide access to high caliber
+                  Engineering courses at a affordable price for potential students</em>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Interesting Software Engineering, Embedded Software Engineering, IoT and Robotics Projects</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-robotics">Robotics</li>
+              <li data-filter=".filter-embedded">Embedded</li>
+              <li data-filter=".filter-app">Apps</li>
+              <li data-filter=".filter-automation">Automation</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-robotics">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/robocon-1.jpeg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Robocon 2023 - Team Sri Lanka</h4>
+                <p>Built 2 robots representing Sri Lanka at the RoboCon 2023 International Robotics Competition</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/robocon-1.jpeg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Robocon 2023 - Team Sri Lanka"><i class="bx bx-plus"></i></a>
+                  <a href="robocon-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-robotics">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/colorfilter-paper.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Dynamically Changeable color filter ROS package</h4>
+                <p>A ROS package that allows us to implement a color and shape filter that can be configured at runtime.
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/colorfilter-paper.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Dynamically Changeable color filter ROS package"><i
+                      class="bx bx-plus"></i></a>
+                  <a href="colorfileter-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-automation">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/drawgenerator-1.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Automated Draw Sheet Generator</h4>
+                <p>A system linking Google Sheets, Google Forms and Google Docs to automatically generate draw sheets.
+                  Automation was done using Google Apps Script</p>
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/drawgenerator-1.png" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Automated Draw Sheet Generator"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-automation">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/sasnakaprojects-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Automated Progress Tracking System</h4>
+                <p>Automated system using Google Sheets, Google Forms and Google Apps Script to track ongoing and future
+                  projects of Sasnaka Sansada Organization</p>
+                </p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/sasnakaprojects-1.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Automated Progress Tracking System"><i class="bx bx-plus"></i></a>
+                  <a href="https://projects.sasnaka.org/" target="_blank" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/ticketapp-logo.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>TicketApp</h4>
+                <p>App to issue tickets for medium scale events. Added QR code scanning and custom validation options
+                  needed by this specific client</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/ticketapp-logo.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                  <a href="ticketapp-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/wordle-1.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Wordle Bot - Python</h4>
+                <p>A Python bot to make informed guesses using information theory</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/wordle-1.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="App 3"><i class="bx bx-plus"></i></a>
+                  <a href="https://pro-gune.github.io/WordleBot/" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-embedded">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/airquality-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>IOT Air Quality Device</h4>
+                <p>Embedded device to measure, display and analyze air quality using CO2, Humidity and Temperature and
+                  Particle density sensors.</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/airquality-1.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="IOT Air Quality Device"><i class="bx bx-plus"></i></a>
+                  <a href="https://pro-gune.github.io/IOT_Air_Quality/" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/tecview-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Tecview Online LMS</h4>
+                <p>Created an Leaning Management System website using Wordpress and tutorLMS for Tecview Online</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/tecview-1.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Tecview Online LMS"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-robotics">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/micrromouse-1.jpeg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Micromouse Simulation System</h4>
+                <p>Created a digital simulator to simulate the performance of the algorithm used by micromouse to solve
+                  the maze. This program generates a maze from a given text file and executes the FLood Fill algorithm
+                  used to solve the maze</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/micrromouse-1.jpeg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Tecview Online LMS"><i class="bx bx-plus"></i></a>
+                  <a href="https://github.com/PRO-GUNE/Micromouse" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>I provide the following services in the fields of Programming, Teaching, Music and Guidance</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-blue">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5"
+                    d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.0360[...]"
+                  </path>
+                </svg>
+                <i class="bx bxl-dribbble"></i>
+              </div>
+              <h4><a href="">Programming</a></h4>
+              <p>Provide support to understand and complete your programming problems and projects</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+            data-aos-delay="200">
+            <div class="icon-box iconbox-orange ">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5"
+                    d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.854346[...]"
+                  </path>
+                </svg>
+                <i class="bx bx-file"></i>
+              </div>
+              <h4><a href="">Teaching</a></h4>
+              <p>Teaching Programming and Mathematics related subjects to students of any age. Preferably for
+                undergraduates studying in this field</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
+            data-aos-delay="300">
+            <div class="icon-box iconbox-pink">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5"
+                    d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187[...]"
+                  </path>
+                </svg>
+                <i class="bx bx-tachometer"></i>
+              </div>
+              <h4><a href="">Guidance</a></h4>
+              <p>Tips and Tricks on how I manage my Time and Work to accomplish a multitude of tasks to a high level of
+                proficiency</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Chathura Gunasekara</h3>
+      <div class="social-links">
+        <a href="#" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/chathura-gunasekara/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://medium.com/@chathuragunasekera" class="medium"><i class="bx bxl-medium"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
