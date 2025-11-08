@@ -25,6 +25,61 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- Custom quick styles to improve readability and alignment -->
+  <style>
+    :root{
+      --accent: #4e73df;
+      --muted: #6c757d;
+    }
+    html,body{height:100%;}
+    body{
+      font-family: 'Inter', 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
+      font-size: 1.05rem; /* slightly larger base font */
+      line-height: 1.7;
+      color: #222;
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    }
+
+    /* Hero tweaks */
+    #hero h1{font-size:2.4rem; font-weight:700; margin-bottom:.25rem}
+    #hero p{font-size:1.15rem; color:var(--muted);}
+
+    /* Section titles */
+    .section-title h2{font-family:'Poppins', 'Inter'; font-weight:700; letter-spacing:0.2px}
+    .section-title p{font-size:1.02rem; color:var(--muted)}
+
+    /* Resume / Experience: left align and spacing improvements */
+    #resume .resume-title{font-size:1.25rem; font-weight:700; margin-bottom:1rem}
+    #resume .resume-item{ text-align:left; margin-bottom:1.5rem; padding-left:.25rem}
+    #resume .resume-item h4{font-weight:700; margin-bottom:.25rem}
+    #resume .resume-item h5{color:var(--muted); font-weight:600; margin-bottom:.5rem}
+    #resume .resume-item p{color:#333; margin-bottom:.5rem; font-size:0.98rem}
+    #resume ul{margin-left:1.1rem}
+
+    /* Skills and progress bars: make values clearer */
+    .skill{display:block; font-weight:600; margin-bottom:.4rem}
+    .progress{margin-bottom:1rem}
+
+    /* Cards, portfolio spacing */
+    .portfolio-wrap{border-radius:8px; overflow:hidden; box-shadow:0 6px 18px rgba(50,50,93,0.06)}
+
+    /* Footer */
+    #footer{background:#fff; padding:2rem 0; border-top:1px solid #eee}
+
+    /* Improve contrast of small icons */
+    .social-links a{color:var(--muted); transition:all .18s}
+    .social-links a:hover{color:var(--accent)}
+
+    /* Make sure buttons are slightly bigger */
+    .btn{font-weight:600}
+
+    /* Small responsiveness adjustments */
+    @media (max-width: 768px){
+      #hero h1{font-size:1.8rem}
+      body{font-size:1rem}
+    }
+  </style>
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -384,11 +439,11 @@
             <h3 class="resume-title">Publications</h3>
             <div class="resume-item">
               <h4>Real-time, Scalable and Extensible Object Filtering and Detection System Using Kinect Sensor and ROS2 Foxy implemented with C++</h4>
-              <h5>ERU Symposium 2023 <em>[Best Paper Nominee]</em><a href="https://dl.lib.uom.lk/items/66637405-8cd2-4b41-bf23-5c54511abda5"><i class="bx bx-link"></i></a></h5>
+              <h5>ERU Symposium 2023 <em>[Best Paper Nominee]</em><a href="https://dl.lib.uom.lk/items/66637405-8cd2-4b41-bf23-5c54511abda5"><i class="bx bx-link"></i></h5>
             </div>
             <div class="resume-item">
               <h4>Reconfigurable Hardware Design of NTT Based Polynomial Multiplication Accelerator for Post Quantum Cryptography</h4>
-              <h5>MERCon 2025 <em>[Best Paper Nominee]</em><a href="https://ieeexplore.ieee.org/document/11217056"><i class="bx bx-link"></i></a></h5>
+              <h5>MERCon 2025 <em>[Best Paper Nominee]</em><a href="https://ieeexplore.ieee.org/document/11217056"><i class="bx bx-link"></i></h5>
             </div>
             <h3 class="resume-title">Honours and Awards</h3>
             <div class="resume-item">
